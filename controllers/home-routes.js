@@ -1,2 +1,8 @@
 const router = require('express').Router();
-const { Profile, User } = require('../models'); //User not turning green???
+
+router.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
+module.exports = router;
+

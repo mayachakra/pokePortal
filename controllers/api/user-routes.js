@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const express = require('express');
+//const { User } = require('../models');
+
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
@@ -16,6 +19,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 
 // Login route
