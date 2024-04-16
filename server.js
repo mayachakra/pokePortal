@@ -1,25 +1,46 @@
-const express = require("express");
-const app = express();
-require('dotenv').config(); // Load environment variables
+const path = require('path');
+const express = require('express');
+const router = express.Router();
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 
-// Middleware for parsing JSON and URL-encoded form data
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+const hbs = exphbs.create({ helpers });
+
+let sess = {
+  secret: 'Super secret pokemon',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+require('dotenv').config();
+
+app.use(session(sess));
+app.use(routes);
+
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve static files from the 'public' folder
-app.use(express.static("public"));
+app.use(routes);
 
-// Routes
-const userRouter = require('./routes/user');
-app.use('/api/users', userRouter);
-
-// Error handling should be placed at the end, after all other middleware and routes
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+module.exports = router;
