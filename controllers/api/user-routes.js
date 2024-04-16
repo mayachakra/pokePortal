@@ -1,13 +1,30 @@
+const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const express = require('express');
-const { User } = require('../models');
+//const { User } = require('../models');
 
-const router = express.Router();
+const { User } = require('../../models');
+
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
 
 // Login route
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
-
     try {
         // Find the user by username
         const user = await User.findOne({ where: { username } });
@@ -26,6 +43,16 @@ router.post('/login', async (req, res) => {
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;
