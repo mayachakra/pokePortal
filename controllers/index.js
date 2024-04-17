@@ -6,4 +6,3 @@ router.use('/', viewRouter);
 router.use('/api', apiRouter);
 
 module.exports = router;
-
