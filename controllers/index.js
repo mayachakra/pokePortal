@@ -1,4 +1,4 @@
-//const router = require('express').Router();
+const router = require('express').Router();
 const viewRouter = require('./home-routes');
 const apiRouter = require('./api');
 
