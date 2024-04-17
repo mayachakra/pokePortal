@@ -1,3 +1,4 @@
+//can have many pokemons, pokemon can only have one trainer
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -19,11 +20,13 @@ Pokemon.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userId: {
+    
+    trainer_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
-        key: 'id',
+        key:'id',
       },
     },
   },
