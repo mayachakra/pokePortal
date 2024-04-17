@@ -1,7 +1,7 @@
 //post request from front end interacts with this
 //server processess quiz submission
 const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const { User, Pokemon } = require('../../models');
 const fetch = require('node-fetch');
 
