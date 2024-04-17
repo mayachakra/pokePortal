@@ -22,7 +22,7 @@ module.exports = {
       fontcolor: '#F0F3F0',
     },
     fontFamily: {
-      arcade: ['Press Start 2P', 'system-ui'],
+      arcade: ['Press Start 2P'],
       font: ['Philosopher', 'sans-serif'],
     },
     extend: {},

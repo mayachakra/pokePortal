@@ -15,7 +15,48 @@
       rel='stylesheet'
     />
   </head>
-  <body>
-    <h1 class='bg-fire'>Hello world</h1>
+  <body class='bg-primarybackground'>
+    {{! Header }}
+    <header class='p-3'>
+      {{! Navigation bar }}
+      <nav class='flex justify-center items-center'>
+        {{! Title }}
+        <div>
+          <img
+            class='object-cover h-24'
+            src='/assets/pokemon-title.png'
+            alt='pokemon-title'
+          />
+        </div>
+        {{! Buttons }}
+        <div class='ml-6'>
+          {{! Login btn }}
+          <button class='mr-2'>
+            {{! span for img and text }}
+            <span class='relative'>
+              <img
+                src='/assets/icons/yellow-btn.png'
+                alt='yellow-btn'
+                class='size-14'
+              />
+              <p class='absolute -left-5 top-3 text-sm'>LOGIN</p>
+            </span>
+          </button>
+          {{! Signup btn }}
+          <button class='mr-2'>
+            {{! span for img and text }}
+            <span class='relative'>
+              <img
+                src='/assets/icons/yellow-btn.png'
+                alt='yellow-btn'
+                class='size-14 w-20'
+              />
+              <p class='absolute -left-6 top-3 text-sm'>SIGNUP</p>
+            </span>
+          </button>
+        </div>
+
+      </nav>
+    </header>
   </body>
 </html>
