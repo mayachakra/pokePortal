@@ -574,6 +574,10 @@ video {
   bottom: -1.25rem;
 }
 
+.-left-10 {
+  left: -2.5rem;
+}
+
 .-left-8 {
   left: -2rem;
 }
@@ -616,6 +620,10 @@ video {
 
 .top-2 {
   top: 0.5rem;
+}
+
+.top-3 {
+  top: 0.75rem;
 }
 
 .top-4 {
@@ -854,6 +862,10 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.leading-5 {
+  line-height: 1.25rem;
 }
 
 .leading-9 {
