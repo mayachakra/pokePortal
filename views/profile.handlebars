@@ -1,0 +1,98 @@
+<section
+  class='flex flex-col items-center justify-start h-full max-w-24 bg-secondrybackground opacity-80 fixed top-0 left-0 z-0 max-sm:hidden'
+>
+  <button class='h-16 w-16 mt-10 mb-20'><img
+      src='/assets/icons/pokeball.png'
+      alt='pokeball'
+    /></button>
+  <button class='h-10 w-10 mt-10 mb-20 mr-10'><img
+      src='/assets/icons/pokedex.png'
+      alt='pokedex'
+    />
+    <p class='font-arcade text-fontcolor text-xs mt-4'>Pokedex</p></button>
+  <button class='h-10 w-10 mt-10 mb-20 mr-10 ml-4'><img
+      src='/assets/icons/battle.png'
+      alt='battle'
+    />
+    <p class='font-arcade text-fontcolor text-xs mt-4'>Battle</p></button>
+</section>
+
+{{! Pokedex }}
+<main
+  class='flex flex-col justify-start items-center bg-blackbackground opacity-80 rounded ml-32 mt-24 h-4/5 w-5/6 overflow-auto max-sm:ml-6'
+>
+  {{! Title }}
+  <h1 class='font-arcade text-fontcolor m-7'>Pokedex</h1>
+  {{! Poke Cards }}
+  <div class='flex flex-wrap justify-center items-center'>
+    <div
+      class='relative flex flex-col justify-center items-center bg-grass h-96 w-60 rounded m-5'
+    >
+      <span
+        class='rounded-full bg-fontcolor opacity-60 w-24 h-24 absolute left-18 top-16'
+      ></span>
+      <img
+        src='/assets/pokemons/bulbasaur.gif'
+        alt='bulbasaur'
+        class='h-20 w-20 z-10'
+      />
+      <p
+        class='p-2 bg-blackbackground opacity-90 font-arcade text-fontcolor text-xs rounded-md mt-5 mb-5'
+      >#001</p>
+      <h3 class='font-arcade text-blackbackground mb-7'>Bulbasaur</h3>
+      <p class='font-arcade text-blackbackground text-xs'>Type:Grass</p>
+    </div>
+    <div
+      class='relative flex flex-col justify-center items-center bg-fire h-96 w-60 rounded m-5'
+    >
+      <span
+        class='rounded-full bg-fontcolor opacity-60 w-24 h-24 absolute left-18 top-16'
+      ></span>
+      <img
+        src='/assets/pokemons/charmander.gif'
+        alt='bulbasaur'
+        class='h-20 w-20 z-10'
+      />
+      <p
+        class='p-2 bg-blackbackground opacity-90 font-arcade text-fontcolor text-xs rounded-md mt-5 mb-5'
+      >#002</p>
+      <h3 class='font-arcade text-blackbackground mb-7'>Charmender</h3>
+      <p class='font-arcade text-blackbackground text-xs'>Type:Fire</p>
+    </div>
+    <div
+      class='relative flex flex-col justify-center items-center bg-water h-96 w-60 rounded m-5'
+    >
+      <span
+        class='rounded-full bg-fontcolor opacity-60 w-24 h-24 absolute left-18 top-16'
+      ></span>
+      <img
+        src='/assets/pokemons/squirtle.gif'
+        alt='bulbasaur'
+        class='h-20 w-20 z-10'
+      />
+      <p
+        class='p-2 bg-blackbackground opacity-90 font-arcade text-fontcolor text-xs rounded-md mt-5 mb-5'
+      >#003</p>
+      <h3 class='font-arcade text-blackbackground mb-7'>Squirtle</h3>
+      <p class='font-arcade text-blackbackground text-xs'>Type:Water</p>
+    </div>
+    <div
+      class='relative flex flex-col justify-center items-center bg-electric h-96 w-60 rounded m-5'
+    >
+      <span
+        class='rounded-full bg-fontcolor opacity-60 w-24 h-24 absolute left-18 top-16'
+      ></span>
+      <img
+        src='/assets/pokemons/pikachu.gif'
+        alt='bulbasaur'
+        class='h-20 w-20 z-10'
+      />
+      <p
+        class='p-2 bg-blackbackground opacity-90 font-arcade text-fontcolor text-xs rounded-md mt-5 mb-5'
+      >#001</p>
+      <h3 class='font-arcade text-blackbackground mb-7'>Pikachu</h3>
+      <p class='font-arcade text-blackbackground text-xs'>Type:Electric</p>
+    </div>
+  </div>
+
+</main>

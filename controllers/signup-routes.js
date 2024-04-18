@@ -1,13 +1,11 @@
 const router = require('express').Router();
 
-router.get('/signup', (req, res) => {
+router.get('/', (req, res) => {
   res.render('signup');
 });
 
 router.post('/signup', (req, res) => {
-    res.redirect('/login');
-  });
-  
+  res.redirect('/login');
+});
 
 module.exports = router;
-
