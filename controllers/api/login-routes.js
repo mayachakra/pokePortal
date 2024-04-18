@@ -2,17 +2,12 @@
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
 
-router.use('/login',userRoutes);
+router.use('/login', userRoutes);
 
 router.get('/', (req, res) => {
   // login is in user-routes
   // response
-  res.json({
-    message: 'Login successful',
-    user: {
-      name: 'Nikola',
-    },
-  });
+  res.render('login');
 });
 
 module.exports = router;
