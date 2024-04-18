@@ -5,6 +5,10 @@ const express = require('express');
 
 const { User } = require('../../models');
 
+router.post('/signup', (req, res) => {
+  res.redirect('/login');
+});
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -21,19 +25,21 @@ router.post('/', async (req, res) => {
 });
 
 
-
 // Login route
 router.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    const { email , password } = req.body;
     try {
         // Find the user by username
-        const user = await User.findOne({ where: { username } });
+        const user = await User.findOne({ where: { email } }); //changed from username
 
         // Check if user exists and verify the password
         if (!user || !bcrypt.compareSync(password, user.password)) {
             return res.status(401).send('Unauthorized');
+            //return res.redirect('/signup');
         }
 
+        req.session.user_id = user.id;
+        req.session.logged_in = true;
         // Generate a JWT token
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '24h' });
 
