@@ -17,18 +17,19 @@
   </head>
   <body class='bg-primarybackground'>
     {{! Header }}
-    <header class='p-3'>
+    <header class='p-3 fixed z-10 flex justify-center items-center w-full'>
       {{! Navigation bar }}
-      <nav class='flex justify-center items-center'>
+      <nav class='flex justify-center items-center ml-4'>
         {{! Title }}
         <div>
           <img
-            class='object-cover h-24'
+            class='object-cover h-16'
             src='/assets/pokemon-title.png'
             alt='pokemon-title'
           />
         </div>
         {{! Buttons }}
+
         <div class='ml-6'>
           {{! Login btn }}
           <button class='mr-2'>
@@ -37,9 +38,11 @@
               <img
                 src='/assets/icons/yellow-btn.png'
                 alt='yellow-btn'
-                class='size-14'
+                class='size-10 w-24 opacity-75'
               />
-              <p class='absolute -left-5 top-3 text-sm'>LOGIN</p>
+              <p
+                class='absolute -left-8 top-2 text-xs font-arcade text-fontcolor'
+              >LOGIN</p>
             </span>
           </button>
           {{! Signup btn }}
@@ -49,14 +52,17 @@
               <img
                 src='/assets/icons/yellow-btn.png'
                 alt='yellow-btn'
-                class='size-14 w-20'
+                class='size-10 w-24 opacity-75'
               />
-              <p class='absolute -left-6 top-3 text-sm'>SIGNUP</p>
+              <p
+                class='absolute -left-9 top-2 text-xs font-arcade text-fontcolor'
+              >SIGNUP</p>
             </span>
           </button>
         </div>
 
       </nav>
     </header>
+    {{{body}}}
   </body>
 </html>
