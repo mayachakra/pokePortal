@@ -1,61 +1,51 @@
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Signup-PokePortal</title>
-    <link rel='stylesheet' href='styles.css' />
-    <link rel='preconnect' href='https://fonts.googleapis.com' />
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Press+Start+2P&display=swap'
-      rel='stylesheet'
-    />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap'
-      rel='stylesheet'
-    />
-  </head>
-  <body class='bg-primarybackground'>
-    <header class='p-3'>
-      <nav class='flex justify-center items-center'>
-        <div>
-          <img
-            class='object-cover h-24'
-            src='/assets/pokemon-title.png'
-            alt='group of pokemon for background'
-          />
-        </div>
-      </nav>
-    </header>
-
-    <div class='absolute left 24 top 1/2 font-arcade text-fontcolor leading-5'>
-      <div>
-        Sign Up To Become a Trainer
-      </div>
-      <div>
-        <img src='' alt='' />
-      </div><br />
-      <div>
-        <form>
-          <label for='uname'>Username:</label>
-          <input type='text' id='fname' name='fname' /><br /><br />
-          <label for='password'>Password:</label>
-          <input type='text' id='uname' passworgit d='password' />
-        </form>
-
-      </div>
-      <button class='mr-2'>
-        <span>
-          <img
-            src='/assets/icons/yellow-btn.png'
-            alt='yellow register button'
-            class='size-10 w-24'
-          />
-          <p class='absolute -left-10 top-3 text-xs font-arcade'>Register</p>
-        </span>
-      </button>
-
+{{! Login }}
+<section class='relative flex justify-center items-center h-full'>
+  <img
+    src='/assets/pokemon-wallpaper.png'
+    alt='walpaper'
+    class='absolute w-full opacity-20'
+  />
+  <div
+    class='flex flex-col justify-center items-center h-4/5 w-4/5 bg-blackbackground opacity-80 rounded border-2 border-fontcolor'
+  >
+    <div class='flex flex-col justify-center items-center'>
+      <h1 class='font-arcade text-fontcolor mt-7'>Are you read become a trainer
+        ?</h1>
+      <img
+        src='/assets/pokemons/charizard.gif'
+        alt='mewtwo'
+        class='h-36 w-36 m-8'
+      />
     </div>
-
-  </body>
-</html>
+    <form class='flex flex-col justify-center items-center'>
+      <label
+        for='username'
+        class='font-arcade text-fontcolor mb-5'
+      >Username</label>
+      <input
+        type='text'
+        class='font-font text-blackbackground mb-5 rounded'
+        placeholder='Username'
+      />
+      <label
+        for='password'
+        class='font-arcade text-fontcolor mb-5'
+      >Password</label>
+      <input
+        type='text'
+        class='font-font text-blackbackground rounded'
+        placeholder='Password'
+      />
+      <button type='submit' class='relative mt-8'>
+        <img
+          src='/assets/icons/yellow-btn.png'
+          alt='yellow-btn'
+          class='size-10 w-32 opacity-85'
+        />
+        <p
+          class='absolute left-8 top-2 text-xs font-arcade text-fontcolor'
+        >Signup</p>
+      </button>
+    </form>
+  </div>
+</section>
