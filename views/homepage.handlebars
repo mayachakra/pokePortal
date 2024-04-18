@@ -1,0 +1,172 @@
+{{! Landpage }}
+<section class='relative h-full z-0'>
+  {{! <video class='fixed right-0 bottom-0 min-w-full max-w-full'>
+        <source src="public/assets/videos/pokeportal.mp4  type='video/mp4'" />
+      </video> }}
+  <img
+    src='/assets/PokemonWallpaper.gif'
+    alt='pokeportalwallpaper'
+    class='h-screen w-screen'
+  />
+  <h1
+    class='absolute left-1/4 top-1/2 font-arcade text-fontcolor text-sm leading-9 tracking-widest'
+  >Are you ready for a Journey</h1>
+</section>
+{{! Welcome page }}
+<section class='relative'>
+  <img
+    src='/assets/pokemon-wallpaper.png'
+    alt='wallpaper'
+    class='w-full h-full opacity-20'
+  />
+  <img
+    src='/assets/dialog-box/prof.png'
+    alt='proffesor-oak'
+    class='absolute left-5 -bottom-5 h-48 w-28'
+  />
+  <img
+    src='assets/dialog-box/speech-dialog1.gif'
+    alt='dialog-box'
+    class='absolute left-20 bottom-40 h-24 w-60'
+  />
+</section>
+{{! Pokemon info }}
+<section>
+  <div
+    class='bg-blackbackground rounded-md flex flex-col justify-center items-center'
+  >
+    <h1 class='text-fontcolor font-font m-10 mt-16 text-center'>Alright,
+      Trainer! Let's dive into the Pokemon Chosing Experience with Pikachu,
+      Bulbasaur, Charmander, and Squirtle. Each of these Pokemon has its own
+      unique qualities and strengths.</h1>
+    <div class='relative flex justify-start items-center m-4'>
+      <div
+        class='rounded-full bg-electric h-20 w-20 absolute left-0 -bottom-1 z-0'
+      ></div>
+      <img
+        src='/assets/pokemons/pikachu.gif'
+        alt='pikachu'
+        class='z-10 h-20 w-20 mr-7'
+      />
+      <p class='font-font text-fontcolor'>Pikachu, with its electric
+        personality, represents those who are energetic, charismatic, and always
+        ready for adventure.</p>
+    </div>
+    <div class='relative flex justify-start items-center m-4'>
+      <div
+        class='rounded-full bg-electric h-20 w-20 absolute left-0 -bottom-1 z-0'
+      ></div>
+      <img
+        src='/assets/pokemons/bulbasaur.gif'
+        alt='pikachu'
+        class='z-10 h-20 w-20 mr-7'
+      />
+      <p class='font-font text-fontcolor'>Bulbasaur, with its nurturing nature,
+        symbolizes those who are caring, loyal, and have a green thumb for
+        growth.</p>
+    </div>
+    <div class='relative flex justify-start items-center m-4'>
+      <div
+        class='rounded-full bg-grass h-20 w-20 absolute left-0 -bottom-1 z-0'
+      ></div>
+      <img
+        src='/assets/pokemons/charmander.gif'
+        alt='pikachu'
+        class='z-10 h-20 w-20 mr-7'
+      />
+      <p class='font-font text-fontcolor'>Charmander, with its fiery spirit,
+        embodies those who are passionate, courageous, and never back down from
+        a challenge.</p>
+    </div>
+    <div class='relative flex justify-start items-center m-4'>
+      <div
+        class='rounded-full bg-water h-20 w-20 absolute left-0 -bottom-1 z-0'
+      ></div>
+      <img
+        src='/assets/pokemons/squirtle.gif'
+        alt='pikachu'
+        class='z-10 h-20 w-20 mr-7'
+      />
+      <p class='font-font text-fontcolor'>Squirtle, with its cool demeanor,
+        reflects those who are strategic, adaptable, and have a knack for
+        thinking on their feet.</p>
+    </div>
+    <button class='mr-2'>
+      {{! span for img and text }}
+      <span class='relative'>
+        <img
+          src='/assets/icons/red-btn.png'
+          alt='yellow-btn'
+          class='h-20 w-56 opacity-75'
+        />
+        <p
+          class='absolute -left-9 top-4 text-xs font-arcade text-fontcolor text-center'
+        >Choose Pokemon</p>
+      </span>
+    </button>
+  </div>
+</section>
+{{! Footer }}
+<footer
+  class='flex justify-center items-center flex-col p-4 bg-secondrybackground flex-wrap'
+>
+  <div class='mb-8 flex flex-col items-center justify-center'>
+    <p class='mb-4 font-arcade text-fontcolor'>Pokemon Portal Team</p>
+    <p class='font-arcade self-center text-xs text-fontcolor'>Copyright (c) 2024
+    </p>
+  </div>
+  <div class='flex justify-between flex-wrap'>
+    <div class='flex flex-col justify-center items-center m-7'>
+      <a href=''><img
+          src='/assets/icons/github.png'
+          alt='github'
+          class='h-6'
+        /></a>
+      <p class='mt-4 mb-4 font-arcade text-xs text-fontcolor'>Kadir Balkaya</p>
+      <img
+        src='assets/developer-images/Kadir.png'
+        alt='devoloper-trainer'
+        class='h-20 w-16'
+      />
+    </div>
+    <div class='flex flex-col justify-center items-center m-7'>
+      <a href=''><img
+          src='/assets/icons/github.png'
+          alt='github'
+          class='h-6'
+        /></a>
+      <p class='mt-4 mb-4 font-arcade text-xs text-fontcolor'>Maya Chakravarty</p>
+      <img
+        src='assets/developer-images/Maya.png'
+        alt='devoloper-trainer'
+        class='h-20 w-16'
+      />
+    </div>
+    <div class='flex flex-col justify-center items-center m-7'>
+      <a href=''><img
+          src='/assets/icons/github.png'
+          alt='github'
+          class='h-6'
+        /></a>
+      <p class='mt-4 mb-4 font-arcade text-xs text-fontcolor'>Gary Bright</p>
+      <img
+        src='assets/developer-images/Garry.png'
+        alt='devoloper-trainer'
+        class='h-20 w-16'
+      />
+    </div>
+    <div class='flex flex-col justify-center items-center m-7'>
+      <a href=''><img
+          src='/assets/icons/github.png'
+          alt='github'
+          class='h-6'
+        /></a>
+      <p class='mt-4 mb-4 font-arcade text-xs text-fontcolor'>Nikola Muyot</p>
+      <img
+        src='assets/developer-images/Nikola.png'
+        alt='devoloper-trainer'
+        class='h-20 w-16'
+      />
+    </div>
+  </div>
+</footer>
