@@ -630,6 +630,26 @@ video {
   top: 1rem;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
+.top-1\/4 {
+  top: 25%;
+}
+
+.right-1\/2 {
+  right: 50%;
+}
+
+.right-1\/4 {
+  right: 25%;
+}
+
+.bottom-1\/4 {
+  bottom: 25%;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -807,6 +827,10 @@ video {
   flex-wrap: wrap;
 }
 
+.content-center {
+  align-content: center;
+}
+
 .items-center {
   align-items: center;
 }
@@ -945,6 +969,14 @@ video {
 
 .opacity-85 {
   opacity: 0.85;
+}
+
+.opacity-15 {
+  opacity: 0.15;
+}
+
+.opacity-30 {
+  opacity: 0.3;
 }
 
 .shadow {
