@@ -9,21 +9,25 @@ async function personalPokemon(answers) {
   //implement logic to determine which pokemon matches the users answers
   //implement scoring
   try {
-    //assuming the last answer determines the Pokemon type
-    //(example lets say: "How would you handle a stressful situation"
-    // 1. headfirst (fire) 2. finding balance (earth) 3. remain calm (air) 4. go with the flow(water))
-    // where the parenthesis saves the value for the display answer (ex. headfirst) as the value (fire)
     const finalAnswer = answers[answers.length - 1].toLowerCase();
-    const apiUrl = `https://pokeapi.co/api/v2/type/${finalAnswer}`; //maybe need to change link?
+    const apiUrl = `https://pokeapi.co/api/v2/pokemon`; //maybe need to change link?
+    //https://pokeapi.co/api/v2/type/{add type from user input ex. "grass"}/
     const response = await fetch(apiUrl);
-    const typeData = await response.json();
+    const pokeData = await response.json();
 
-    if (!typeData || typeData.pokemon) {
+    if (!pokeData || pokeData.results) {
       throw new Error('Failed to fetch data');
     }
-    const pokemonNames = typeData.pokemon.map((p) => p.pokemon.name);
-    const randomPokemon = Math.floor(Math.random() * pokemonNames.length);
-    const randomPokemonName = pokemonNames[randomPokemon];
+    
+    const pokemonTypeName = pokeData.results   
+        .filter(pokemon => pokemon.types.some(type => type.type.name === finalAnswer))
+        .map(pokemon => pokemon.name);
+    
+    if (pokemonTypeName.length === 0){
+        error.message(`No pokemon found for this type`);
+    }
+    const randomPokemonNum = Math.floor(Math.random() * pokemonNames.length);
+    const randomPokemonName = pokemonTypeName[randomPokemonNum];
     return {
       name: randomPokemonName,
       type: finalAnswer.charAt(0).toUpperCase() + finalAnswer.slice(1),
@@ -36,7 +40,8 @@ async function personalPokemon(answers) {
   }
 }
 
-router.post('/quiz', async (req, res) => {
+// POST /api/quiz
+router.post('/', async (req, res) => {
   try {
     const { userId } = req.session;
     const { answers } = req.body;
