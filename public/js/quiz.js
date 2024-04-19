@@ -3,7 +3,7 @@ const app = new PIXI.Application({
   height: 600, // Height of the canvas
   backgroundColor: 0x1099bb, // Background color
 });
-document.body.appendChild(app.view);
+document.body.appendChild(app.canvas);
 // Load Assets
 PIXI.Loader.shared
   .add('pokemonSprite', 'pokePortal/public/assets/pokemons/bulbasaur.gif')
@@ -30,19 +30,19 @@ function setup(loader, resources) {
 // Event listeners when form is submitted, fetch post request to /api/quiz etc.
 // Once submitted, go back to profile
 async function submitQuizAnswers(answers) {
-  try {
-    const response = await fetch('/api/quiz', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ answers }),
-    });
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error('Error submitting answers', error);
-  }
+try {
+  const response = await fetch('/api/quiz', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ answers }),
+  });
+  const data = await response.json();
+  console.log(data);
+} catch (error) {
+  console.error('Error submitting answers', error);
+}
 }
 const quizAnswers = ['answer1', 'answer2'];
 submitQuizAnswers(quizAnswers);
