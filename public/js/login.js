@@ -18,6 +18,7 @@ const loginFormHandler = async (event) => {
           headers: { 'Content-Type': 'application/json' }
         });
   
+        console.log('response',response);
       if (response.ok) {
         const data = await response.json();
         console.log(data);
