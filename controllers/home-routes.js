@@ -1,14 +1,14 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  res.render('homepage', { showLoginAndSignup: true });
 });
 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.render('profile', { user: req.session.user });
     //return res.redirect('/profile');
-  } else{
+  } else {
     res.render('signup');
   }
 });

@@ -8,19 +8,25 @@ const path = require('path');
 const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-const dataPath = path.join(__dirname,'./userData.json'); 
+//const dataPath = path.join(__dirname,'./seeds/userData.json'); 
+const dataPath = '../seeds/userData.json'; 
+
 console.log('data path', dataPath);
 
+// GET /api/user
+router.get("/", async (req, res) => {
+  const users = await User.findAll();
+  res.json(users);
+})
 
 //const signupRouter = require('./api/user-routes');
 
 //router.use('/signup', signupRouter);
 
 
-
 router.post('/', async (req, res) => {
   try {
-    const {username, password} =req.body;
+    const {email, password} =req.body; //changed from username to email
     // Encrypt the password before storing it in the database
     const hashedPassword = bcrypt.hashSync(password, 8); // salt rounds should be enough to ensure security but consider your app's performance requirements
 
@@ -30,28 +36,34 @@ router.post('/', async (req, res) => {
     //   password: hashedPassword,
     // });
     const userData = await User.create({
-      username,
+      email,
       password: hashedPassword,
     });
 
+
+    //User.findAll
+    //user.findByPk
+
     let existing_data = [];
-
-
-    try{
-      const data = fs.readFileSync(dataPath);
-      console.log('Data Path:', data);
+    const filePath = path.join(__dirname, '..', dataPath);
+   /*
+    if(fs.existsSync(filePath)){
+      const data = fs.readFileSync(filePath, 'utf8');
+      console.log('File Contents:', data);
       existing_data = JSON.parse(data);
-      console.log('Existing Data:', existing_data);
-    } catch(err){
-      console.error('Error', err);
+
+    } else{
+      console.error('File not found:', filePath);
     }
+
     existing_data.push(userData);
     console.log('Existing Data w/ PUSH:', existing_data);
     try{
-      fs.writeFileSync(dataPath, JSON.stringify(existing_data, null, 2));
+      fs.writeFileSync(filePath, JSON.stringify(existing_data, null, 2));
     }catch(error){
       console.error('write to json error', error);
     }
+    */
 
     req.session.user= userData;
     // Initialize user session upon signup
@@ -71,6 +83,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+/*
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -85,7 +98,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+*/
 // Login route
 //withAuth only on quiz and profile pages
 router.post('/login', async (req, res) => {
