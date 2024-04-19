@@ -81,7 +81,8 @@ const createPokemonCard = (pokemon) => {
   pokemonEl.style.backgroundColor = color;
 
   // HTML content for the Pokemon card
-  const pokemonInnerHtml = ` <div
+  const pokemonInnerHtml = ` 
+  <div
   class='relative flex flex-col justify-center items-center h-96 w-60 rounded m-5'
 >
   <span

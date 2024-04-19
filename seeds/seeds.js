@@ -10,7 +10,7 @@ const seedDB = async () => {
         returning: true,
     });
     console.log('user seeds successful!');
-    console.log(`${users}`);
+    console.log(users);
     process.exit(0);
 };
 

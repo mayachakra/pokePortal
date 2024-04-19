@@ -12,11 +12,17 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   const { email , password } = req.body;
+  console.log('email', email);
+  console.log('password', password);
   try {
       // Find the user by username
       const user = await User.findOne({ where: { email } }); //changed from username
       // Check if user exists and verify the password
-      if (!user || !bcrypt.compareSync(password, user.password)) {
+      console.log('user', user);
+      console.log('user-pass', user.password);
+
+      const validPassword = await bcrypt.compare(password, user.password);
+      if (!user || !validPassword) {
           return res.status(401).send('Unauthorized');
           //document.location.replace('/signup');
         }

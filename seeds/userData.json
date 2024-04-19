@@ -10,5 +10,20 @@
   {
     "email": "Arcane@aol.com",
     "password": "password123"
+  },
+  {
+    "id": 14,
+    "email": "fifa@gmail.com",
+    "password": "$2b$10$CSYUmUVE83oRJ/TDySmfHOMFR42VoRZXIa7yVkmEzUYCkMnNtNpqO"
+  },
+  {
+    "id": 15,
+    "email": "ben@gmail.com",
+    "password": "$2b$10$7lL8BL08dL5sCWhdTb.VAOx0OtYPNRCTsQ6sLB6UHa2dntU73ld5G"
+  },
+  {
+    "id": 5,
+    "email": "angelina@gmail.com",
+    "password": "$2b$10$evAKjBa4AeePILGaXt4fOeBaXk/bKLpdnWgd4TxBLgCbN/4n/Te4G"
   }
 ]
