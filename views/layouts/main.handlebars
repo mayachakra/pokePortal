@@ -15,7 +15,7 @@
       rel='stylesheet'
     />
   </head>
-  <body class='bg-primarybackground'>
+  <body class='bg-primarybackground relative'>
     {{! Header }}
     <header
       class='p-3 fixed z-10 top-0 left-0 flex justify-center items-center w-full'
@@ -34,43 +34,43 @@
 
         <div class='ml-6'>
           {{! Login btn }}
-          <a href="/login" class="'mr-2">
-          <button class='mr-2'>
-            {{! span for img and text }}
-            <span class='relative'>
-              <img
-                src='/assets/icons/yellow-btn.png'
-                alt='yellow-btn'
-                class='size-10 w-24 opacity-75'
-              />
-              <p
-                class='absolute -left-8 top-2 text-xs font-arcade text-fontcolor'
-              >LOGIN</p>
-            </span>
-          </button>
+          <a href='/login' class="'mr-2">
+            <button class='mr-2'>
+              {{! span for img and text }}
+              <span class='relative'>
+                <img
+                  src='/assets/icons/yellow-btn.png'
+                  alt='yellow-btn'
+                  class='size-10 w-24 opacity-75'
+                />
+                <p
+                  class='absolute -left-8 top-2 text-xs font-arcade text-fontcolor'
+                >LOGIN</p>
+              </span>
+            </button>
           </a>
-          
+
           {{! Signup btn }}
-          <a href="/signup" class="'mr-2">
-          <button class='mr-2'>
-            {{! span for img and text }}
-            <span class='relative'>
-              <img
-                src='/assets/icons/yellow-btn.png'
-                alt='yellow-btn'
-                class='size-10 w-24 opacity-75'
-              />
-              <p
-                class='absolute -left-9 top-2 text-xs font-arcade text-fontcolor'
-              >SIGNUP</p>
-            </span>
-          </button>
+          <a href='/signup' class="'mr-2">
+            <button class='mr-2'>
+              {{! span for img and text }}
+              <span class='relative'>
+                <img
+                  src='/assets/icons/yellow-btn.png'
+                  alt='yellow-btn'
+                  class='size-10 w-24 opacity-75'
+                />
+                <p
+                  class='absolute -left-9 top-2 text-xs font-arcade text-fontcolor'
+                >SIGNUP</p>
+              </span>
+            </button>
           </a>
         </div>
       </nav>
     </header>
     {{{body}}}
-   <!--
+    <!--
     <script src="/js/login.js"></script>
     -->
   </body>
