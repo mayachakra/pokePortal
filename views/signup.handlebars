@@ -17,12 +17,13 @@
         class='h-36 w-36 m-8'
       />
     </div>
-    <form class='flex flex-col justify-center items-center'>
+    <form id='signup-form' class='flex flex-col justify-center items-center'>
       <label
         for='username'
         class='font-arcade text-fontcolor mb-5'
       >Username</label>
       <input
+        id='username'
         type='text'
         class='font-font text-blackbackground mb-5 rounded'
         placeholder='Username'
@@ -32,11 +33,12 @@
         class='font-arcade text-fontcolor mb-5'
       >Password</label>
       <input
+        id='password'
         type='text'
         class='font-font text-blackbackground rounded'
         placeholder='Password'
       />
-      <button type='submit' class='relative mt-8'>
+      <button id='submit' type='submit' class='relative mt-8'>
         <img
           src='/assets/icons/yellow-btn.png'
           alt='yellow-btn'
@@ -49,3 +51,4 @@
     </form>
   </div>
 </section>
+<script src='/js/signup.js'></script>
