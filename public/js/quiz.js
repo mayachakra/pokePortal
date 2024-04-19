@@ -3,7 +3,7 @@ const app = new PIXI.Application({
   height: 600, // Height of the canvas
   backgroundColor: 0x1099bb, // Background color
 });
-document.body.appendChild(app.view);
+document.body.appendChild(app.canvas);
 // Load Assets
 PIXI.Loader.shared
   .add('pokemonSprite', 'pokePortal/public/assets/pokemons/bulbasaur.gif')
