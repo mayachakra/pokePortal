@@ -1,9 +1,10 @@
+/*
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the signup form
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const email = document.querySelector('#username').value.trim();
+  const password = document.querySelector('#password').value.trim();
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -41,3 +42,51 @@ const signupFormHandler = async (event) => {
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+*/
+  
+const signupFormHandler = async (event) => {
+    event.preventDefault();
+    const email = document.querySelector('#username').value.trim();
+    const password = document.querySelector('#password').value.trim();
+  
+    console.log(email);
+    console.log(password);
+
+    if (email && password) {
+      const response = await fetch('/api/user', {
+        method: 'post',
+        body: JSON.stringify({
+          email,
+          password
+        }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (response.ok) {
+        console.log('success');
+        document.location.replace('/login');
+      } else {
+        alert(response.statusText);
+      }
+
+/*
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        // If successful, redirect the browser to the profile page
+        //document.location.replace('/profile');
+        console.log('data.user',data.user);
+        document.location.replace('/profile');
+      } else {
+        alert('Signup Failed', response.statusText);
+      }
+      */
+    }
+  };
+  
+  document
+    .querySelector('#signup-form')
+    .addEventListener('submit', signupFormHandler);
+  
+
+  
