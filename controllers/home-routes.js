@@ -8,9 +8,20 @@ router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.render('profile', { user: req.session.user });
     //return res.redirect('/profile');
+  } else{
+    res.render('signup');
+  }
+});
+
+/*
+router.post('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.render('profile', { user: req.session.user });
+    //return res.redirect('/profile');
   }
   res.render('signup');
 });
+*/
 
 router.get('/quiz', (req, res) => {
   res.render('quiz');
