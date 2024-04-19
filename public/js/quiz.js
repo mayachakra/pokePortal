@@ -1,13 +1,14 @@
-PIXI.utils
-
 const app = new PIXI.Application({
-  width: 800,  // Width of the canvas
+  width: 800, // Width of the canvas
   height: 600, // Height of the canvas
   backgroundColor: 0x1099bb, // Background color
 });
 document.body.appendChild(app.view);
-// Load Assets 
-PIXI.Loader.shared.add('pokemonSprite', '/assets/pokemons/eevee.png').load(setup);
+// Load Assets
+PIXI.Loader.shared
+  .add('pokemonSprite', 'pokePortal/public/assets/pokemons/bulbasaur.gif')
+  .load(setup)
+  .on('error', (error) => console.error('Error loading sprite:', error));
 function setup(loader, resources) {
   const sprite = new PIXI.Sprite(resources.pokemonSprite.texture);
   sprite.x = app.renderer.width / 2;
@@ -15,14 +16,14 @@ function setup(loader, resources) {
   sprite.anchor.set(0.5); // Center the sprite's anchor point
   app.stage.addChild(sprite);
   // Add animation to the sprite
-  app.ticker.add(delta => {
-      sprite.rotation += 0.01 * delta; // Rotate the sprite
+  app.ticker.add((delta) => {
+    sprite.rotation += 0.01 * delta; // Rotate the sprite
   });
   // Make the sprite interactive
   sprite.interactive = true;
   sprite.buttonMode = true;
   sprite.on('pointerdown', () => {
-      console.log('Sprite clicked!');
+    console.log('Sprite clicked!');
   });
 }
 // Frontend logic for quiz page
