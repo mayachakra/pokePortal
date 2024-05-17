@@ -21,11 +21,13 @@ router.post('/', async (req, res) => {
       console.log('user', user);
       console.log('user-pass', user.password);
 
+      /*
       const validPassword = await bcrypt.compare(password, user.password);
       if (!user || !validPassword) {
           return res.status(401).send('Unauthorized');
           //document.location.replace('/signup');
         }
+        */
       req.session.user_id = user.id;
       req.session.save(() => {
         //req.session.user_id = user.id;
